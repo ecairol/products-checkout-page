@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './styles.css';
 import ProductSubtotal from '../ProductSubtotal';
+import Total from '../Total';
 
 class ProductList extends Component {
   state = {
+    tax: 0.01,
     products: [
       { id:1, name:"Laptop", price:1450, quantity:1 },
       { id:2, name:"Magic Mouse", price:180, quantity:1 },
@@ -30,14 +32,18 @@ class ProductList extends Component {
 
   render() { 
     return (<div className="product-list-component">
-      <h1>List of products</h1>
+      <h1>Your Cart</h1>
+
       {this.state.products.map(product => {
-        return  <ProductSubtotal 
+        return  <ProductSubtotal
+                  key={product.id} 
                   product={product}
                   onIncrement={this.handleIncrement}
                   onDecrement={this.handleDecrement}>
                 </ProductSubtotal>
       })}
+      
+      <Total products={this.state.products} tax={this.state.tax}></Total>
     </div>);
   }
 }

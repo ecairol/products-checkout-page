@@ -1,0 +1,17 @@
+.product-subtotal-component {
+  margin: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid #aaa;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-subtotal-component button {
+  background: #eee;
+  border: 1px solid #888;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0.3rem;
+}
